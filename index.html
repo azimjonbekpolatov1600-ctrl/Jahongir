@@ -1,192 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium men's barbershop offering classic and modern haircuts, beard trims, hot towel shaves, and styling services. Expert barber with 15+ years experience.">
-    <meta name="keywords" content="barber, men's haircut, beard trim, shave, barbershop, men's grooming">
-    <title>Iron & Blade Barber Shop | Premium Men's Grooming</title>
+    <title>BarberShop Tashkent | Erkaklar Sartaroshxonasi</title>
+    <meta name="description" content="Professional men's barbershop in Tashkent, Uzbekistan. Haircuts, beard grooming, and styling for men.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ========================================
-           CSS VARIABLES & RESET
-        ======================================== */
-        :root {
-            --primary-dark: #1a1a1a;
-            --secondary-dark: #2d2d2d;
-            --accent-gold: #c9a961;
-            --accent-copper: #b87333;
-            --text-light: #f5f5f5;
-            --text-gray: #a0a0a0;
-            --border-color: #404040;
-            --shadow: rgba(0, 0, 0, 0.5);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --black: #0A0A0A;
+            --dark-gray: #1A1A1A;
+            --medium-gray: #2D2D2D;
+            --light-gray: #4A4A4A;
+            --white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --accent: #D4A574;
+            --accent-dark: #B8894F;
+            --red: #C41E3A;
+            --shadow-hard: 0 10px 40px rgba(0, 0, 0, 0.3);
+            --shadow-medium: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         body {
-            font-family: 'Crimson Pro', serif;
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            line-height: 1.7;
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: var(--dark-gray);
+            color: var(--white);
+            line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ========================================
-           TYPOGRAPHY
-        ======================================== */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
+        .heading-font {
+            font-family: 'Bebas Neue', sans-serif;
             letter-spacing: 2px;
-            text-transform: uppercase;
         }
 
-        h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
-        h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 1.5rem; }
-        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+        .oswald {
+            font-family: 'Oswald', sans-serif;
         }
 
-        /* ========================================
-           HEADER & NAVIGATION
-        ======================================== */
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(180deg, var(--primary-dark) 0%, rgba(26, 26, 26, 0.95) 100%);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            border-bottom: 2px solid var(--accent);
+            animation: slideDown 0.6s ease;
         }
 
-        header.scrolled {
-            box-shadow: 0 4px 20px var(--shadow);
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-dark);
-            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
             letter-spacing: 3px;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--text-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        }
+
+        .logo-accent {
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--white);
             text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1rem;
-            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-gold);
+            color: var(--accent);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--medium-gray);
+            padding: 0.4rem 0.6rem;
+            border-radius: 25px;
+            border: 1px solid var(--light-gray);
         }
 
-        .nav-links a.active {
-            color: var(--accent-gold);
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
+        .lang-btn {
+            background: transparent;
+            border: none;
             cursor: pointer;
-            gap: 5px;
+            font-size: 1.1rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            opacity: 0.6;
         }
 
-        .menu-toggle span {
-            width: 30px;
-            height: 3px;
-            background: var(--accent-gold);
-            transition: all 0.3s ease;
+        .lang-btn.active {
+            background: var(--accent);
+            opacity: 1;
+            box-shadow: 0 2px 8px rgba(212, 165, 116, 0.4);
         }
 
-        /* ========================================
-           HERO SECTION
-        ======================================== */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        /* Hero Section */
         .hero {
-            height: 100vh;
+            margin-top: 80px;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--medium-gray) 100%);
         }
 
         .hero::before {
@@ -201,534 +174,28 @@
                     90deg,
                     transparent,
                     transparent 2px,
-                    rgba(201, 169, 97, 0.03) 2px,
-                    rgba(201, 169, 97, 0.03) 4px
+                    rgba(255, 255, 255, 0.02) 2px,
+                    rgba(255, 255, 255, 0.02) 4px
                 );
             pointer-events: none;
         }
 
         .hero-content {
-            text-align: center;
-            z-index: 2;
-            max-width: 900px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-tagline {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            letter-spacing: 4px;
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-        }
-
-        .hero h1 {
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            color: var(--text-gray);
-            margin-bottom: 3rem;
-            font-style: italic;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
-            color: var(--primary-dark);
-            text-decoration: none;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.5s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(201, 169, 97, 0.6);
-        }
-
-        /* Decorative Elements */
-        .hero-decoration {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 2px solid var(--accent-gold);
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: rotate 30s linear infinite;
-        }
-
-        .hero-decoration:nth-child(1) {
-            top: 10%;
-            right: 10%;
-        }
-
-        .hero-decoration:nth-child(2) {
-            bottom: 10%;
-            left: 10%;
-            animation-direction: reverse;
-        }
-
-        /* ========================================
-           SECTIONS
-        ======================================== */
-        section {
-            padding: 6rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-header::after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: var(--accent-gold);
-            margin: 1.5rem auto 0;
-        }
-
-        /* ========================================
-           ABOUT SECTION
-        ======================================== */
-        .about-content {
+            padding: 4rem 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-        }
-
-        .about-image {
             position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 10px 40px var(--shadow);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(201, 169, 97, 0.3) 0%, transparent 100%);
             z-index: 1;
         }
 
-        .about-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
+        .hero-text {
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .about-text h3 {
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .credentials {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .credential-item::before {
-            content: '✓';
-            color: var(--accent-gold);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* ========================================
-           SERVICES SECTION
-        ======================================== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--secondary-dark);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px var(--shadow);
-            border-color: var(--accent-gold);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .service-card h3 {
-            color: var(--accent-gold);
-            margin-bottom: 1rem;
-        }
-
-        .service-price {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-top: 1.5rem;
-            display: block;
-        }
-
-        .service-duration {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        /* ========================================
-           GALLERY SECTION
-        ======================================== */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            height: 350px;
-            cursor: pointer;
-            box-shadow: 0 5px 20px var(--shadow);
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
-        .gallery-item:hover::before {
-            opacity: 1;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            z-index: 2;
-            color: var(--text-light);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ========================================
-           CONTACT SECTION
-        ======================================== */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            background: var(--secondary-dark);
-            padding: 3rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .contact-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .contact-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .contact-item h3 {
-            color: var(--accent-gold);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-item p {
-            color: var(--text-light);
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        .contact-item a {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-gold);
-        }
-
-        .map-placeholder {
-            background: var(--border-color);
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            margin-top: 2rem;
-            color: var(--text-gray);
-            font-style: italic;
-        }
-
-        /* Booking Form */
-        .booking-form {
-            background: var(--secondary-dark);
-            padding: 3rem;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary-dark);
-            border: 1px solid var(--border-color);
-            color: var(--text-light);
-            font-family: 'Crimson Pro', serif;
-            font-size: 1rem;
-            border-radius: 4px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-copper) 100%);
-            color: var(--primary-dark);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
-        }
-
-        /* ========================================
-           FOOTER
-        ======================================== */
-        footer {
-            background: var(--secondary-dark);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 5%;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .footer-text {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-
-        /* ========================================
-           LANGUAGE SWITCHER
-        ======================================== */
-        .language-switcher {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .lang-btn {
-            padding: 0.5rem 1rem;
-            background: transparent;
-            color: var(--text-gray);
-            border: 1px solid var(--border-color);
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-radius: 4px;
-        }
-
-        .lang-btn:hover {
-            color: var(--accent-gold);
-            border-color: var(--accent-gold);
-        }
-
-        .lang-btn.active {
-            background: var(--accent-gold);
-            color: var(--primary-dark);
-            border-color: var(--accent-gold);
-        }
-
-        /* ========================================
-           ANIMATIONS
-        ======================================== */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -740,794 +207,1004 @@
             }
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .hero-text h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-transform: uppercase;
         }
 
-        /* ========================================
-           RESPONSIVE DESIGN
-        ======================================== */
+        .hero-text h1 .accent-text {
+            color: var(--accent);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-hard);
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--medium-gray) 0%, var(--light-gray) 100%);
+            border: 3px solid var(--accent);
+        }
+
+        .hero-image-wrapper::before {
+            content: '✂';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-size: 10rem;
+            opacity: 0.1;
+            color: var(--accent);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.2rem 3rem;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--black);
+            box-shadow: 0 4px 16px rgba(212, 165, 116, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1.5rem auto 0;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--black);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--dark-gray);
+            padding: 2.5rem 2rem;
+            border: 2px solid var(--medium-gray);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: var(--shadow-hard);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .service-card p {
+            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Portfolio Gallery */
+        #portfolio {
+            background: var(--dark-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--medium-gray) 0%, var(--light-gray) 100%);
+            box-shadow: var(--shadow-medium);
+            transition: all 0.4s;
+            cursor: pointer;
+            border: 2px solid var(--medium-gray);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hard);
+            border-color: var(--accent);
+        }
+
+        .gallery-item::after {
+            content: '✂';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            opacity: 0.15;
+            color: var(--accent);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-item:hover .gallery-label {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--black);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: var(--dark-gray);
+            padding: 3rem;
+            border: 2px solid var(--medium-gray);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .contact-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--light-gray);
+            text-decoration: none;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: var(--medium-gray);
+            border: 2px solid var(--light-gray);
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-btn:hover {
+            background: var(--accent);
+            color: var(--black);
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        .map-container {
+            overflow: hidden;
+            box-shadow: var(--shadow-hard);
+            height: 500px;
+            background: var(--medium-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 3px solid var(--accent);
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--light-gray);
+        }
+
+        .map-placeholder::before {
+            content: '📍';
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1rem;
+            filter: grayscale(100%);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--light-gray);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 2px solid var(--accent);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--accent-dark);
+        }
+
+        /* Responsive Design */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 70%;
-                background: var(--secondary-dark);
+                top: 80px;
+                left: -100%;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                transition: right 0.4s ease;
-                box-shadow: -5px 0 20px var(--shadow);
+                background: var(--black);
+                width: 100%;
+                padding: 2rem;
+                box-shadow: var(--shadow-hard);
+                transition: left 0.3s;
+                align-items: flex-start;
+                border-top: 2px solid var(--accent);
             }
 
             .nav-links.active {
-                right: 0;
+                left: 0;
             }
 
-            .menu-toggle {
-                display: flex;
+            .mobile-menu-btn {
+                display: block;
             }
 
-            .menu-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(8px, 8px);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(8px, -8px);
-            }
-
-            .about-content,
-            .contact-container {
+            .hero-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
+        }
 
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        @media (max-width: 640px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
             }
 
             section {
-                padding: 4rem 5%;
+                padding: 4rem 1.5rem;
             }
 
-            .language-switcher {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                flex-direction: column;
-                z-index: 999;
-                background: var(--secondary-dark);
-                padding: 0.5rem;
-                border-radius: 8px;
-                border: 1px solid var(--border-color);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content {
-                padding: 1rem;
-            }
-
-            .cta-button {
+            .btn {
                 padding: 1rem 2rem;
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
-            .booking-form,
-            .contact-info {
-                padding: 2rem 1.5rem;
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* ========================================
-           UTILITY CLASSES
-        ======================================== */
-        .hidden {
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Language-specific content */
+        [data-lang] {
             display: none;
         }
 
-        .page-section {
-            min-height: 100vh;
-            padding-top: 100px;
+        [data-lang].active {
+            display: block;
+        }
+
+        .inline[data-lang].active {
+            display: inline;
+        }
+
+        /* Stripe accent */
+        .stripe-accent {
+            position: relative;
+        }
+
+        .stripe-accent::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 80%;
+            background: var(--accent);
         }
     </style>
 </head>
 <body>
-    <!-- ========================================
-         HEADER & NAVIGATION
-    ======================================== -->
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">
-                <div class="logo-icon">I&B</div>
-                <h1>Iron & Blade</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" class="active" data-i18n="nav_home">Home</a></li>
-                <li><a href="#about" data-i18n="nav_about">About</a></li>
-                <li><a href="#services" data-i18n="nav_services">Services</a></li>
-                <li><a href="#gallery" data-i18n="nav_gallery">Gallery</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            <a href="#home" class="logo heading-font">BARBER<span class="logo-accent">SHOP</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-lang="uz" class="active">Bosh</a><a href="#home" data-lang="ru">Главная</a><a href="#home" data-lang="en">Home</a></li>
+                <li><a href="#services" data-lang="uz" class="active">Xizmatlar</a><a href="#services" data-lang="ru">Услуги</a><a href="#services" data-lang="en">Services</a></li>
+                <li><a href="#portfolio" data-lang="uz" class="active">Ish</a><a href="#portfolio" data-lang="ru">Работы</a><a href="#portfolio" data-lang="en">Work</a></li>
+                <li><a href="#contact" data-lang="uz" class="active">Aloqa</a><a href="#contact" data-lang="ru">Контакты</a><a href="#contact" data-lang="en">Contact</a></li>
+                <li class="lang-switcher">
+                    <button class="lang-btn active" data-lang-switch="uz">🇺🇿</button>
+                    <button class="lang-btn" data-lang-switch="ru">🇷🇺</button>
+                    <button class="lang-btn" data-lang-switch="en">🇬🇧</button>
+                </li>
             </ul>
-            <div class="language-switcher">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="uz">UZ</button>
-                <button class="lang-btn" data-lang="ru">RU</button>
-            </div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </nav>
     </header>
 
-    <!-- ========================================
-         HERO SECTION
-    ======================================== -->
-    <section id="home" class="hero">
-        <div class="hero-decoration"></div>
-        <div class="hero-decoration"></div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-tagline" data-i18n="hero_tagline">Timeless Craft • Modern Edge</div>
-            <h1>Iron & Blade<br><span data-i18n="hero_title">Barber Shop</span></h1>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">Where tradition meets precision in men's grooming</p>
-            <a href="#contact" class="cta-button" data-i18n="cta_book">Book Your Appointment</a>
-        </div>
-    </section>
-
-    <!-- ========================================
-         ABOUT SECTION
-    ======================================== -->
-    <section id="about" class="page-section">
-        <div class="section-header">
-            <h2 data-i18n="about_title">Meet Your Barber</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&h=1000&fit=crop" alt="Professional barber at work">
-            </div>
-            <div class="about-text">
-                <h3>Marcus "Marc" Rodriguez</h3>
-                <p data-i18n="about_p1">
-                    With over 15 years of experience in the craft of barbering, I've dedicated my career to perfecting the art of men's grooming. What started as an apprenticeship in a traditional New York barbershop has evolved into a passion for blending classic techniques with contemporary styles.
+            <div class="hero-text">
+                <h1 class="heading-font">
+                    <span data-lang="uz" class="active">ERKAKLAR<br><span class="accent-text">BARBER</span></span>
+                    <span data-lang="ru">МУЖСКАЯ<br><span class="accent-text">БАРБЕРШОП</span></span>
+                    <span data-lang="en">MEN'S<br><span class="accent-text">BARBERSHOP</span></span>
+                </h1>
+                <p class="subtitle oswald">
+                    <span data-lang="uz" class="active">Toshkentning Eng Yaxshi Sartaroshi</span>
+                    <span data-lang="ru">Лучший Барбер Ташкента</span>
+                    <span data-lang="en">Best Barber in Tashkent</span>
                 </p>
-                <p data-i18n="about_p2">
-                    At Iron & Blade, I believe every man deserves to look and feel his absolute best. Whether you're looking for a classic cut, a modern fade, or a meticulous beard sculpting, I bring precision, attention to detail, and a commitment to excellence to every chair.
-                </p>
-                <p data-i18n="about_p3">
-                    I've trained under master barbers across the country, earned certifications in advanced cutting techniques, and continuously stay updated with the latest trends while honoring timeless barbering traditions.
-                </p>
-                <div class="credentials">
-                    <div class="credential-item" data-i18n="cred1">15+ Years Experience</div>
-                    <div class="credential-item" data-i18n="cred2">Master Barber Certified</div>
-                    <div class="credential-item" data-i18n="cred3">Straight Razor Specialist</div>
-                    <div class="credential-item" data-i18n="cred4">Award-Winning Stylist</div>
+                <div class="cta-buttons">
+                    <a href="tel:+998901234567" class="btn btn-primary oswald">
+                        📞 <span data-lang="uz" class="inline active">Qo'ng'iroq</span>
+                        <span data-lang="ru" class="inline">Звонок</span>
+                        <span data-lang="en" class="inline">Call</span>
+                    </a>
+                    <a href="https://t.me/barbershop_uz" target="_blank" class="btn btn-secondary oswald">
+                        ✈️ TELEGRAM
+                    </a>
                 </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper"></div>
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         SERVICES SECTION
-    ======================================== -->
-    <section id="services" class="page-section">
-        <div class="section-header">
-            <h2 data-i18n="services_title">Services & Pricing</h2>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 1rem auto 0;" data-i18n="services_subtitle">Premium grooming services tailored to the modern gentleman</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">✂️</span>
-                <h3 data-i18n="service1_title">Classic Haircut</h3>
-                <p data-i18n="service1_desc">Traditional scissor cut with attention to detail. Includes consultation, wash, cut, and styling.</p>
-                <span class="service-price">50,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service1_duration">45 minutes</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">⚡</span>
-                <h3 data-i18n="service2_title">Modern Fade</h3>
-                <p data-i18n="service2_desc">Contemporary fade styles from low to high. Precision clipper work with seamless blending.</p>
-                <span class="service-price">70,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service2_duration">60 minutes</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🪒</span>
-                <h3 data-i18n="service3_title">Hot Towel Shave</h3>
-                <p data-i18n="service3_desc">Luxurious straight razor shave with hot towels, pre-shave oils, and aftershave treatment.</p>
-                <span class="service-price">40,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service3_duration">30 minutes</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🧔</span>
-                <h3 data-i18n="service4_title">Beard Trim & Shape</h3>
-                <p data-i18n="service4_desc">Professional beard grooming, shaping, and conditioning to maintain the perfect beard style.</p>
-                <span class="service-price">30,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service4_duration">30 minutes</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">💼</span>
-                <h3 data-i18n="service5_title">Executive Package</h3>
-                <p data-i18n="service5_desc">Complete grooming experience: haircut, hot towel shave, beard trim, and facial treatment.</p>
-                <span class="service-price">150,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service5_duration">90 minutes</div>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">✨</span>
-                <h3 data-i18n="service6_title">Hair Styling</h3>
-                <p data-i18n="service6_desc">Special occasion styling, pompadours, slick backs, and textured styles with premium products.</p>
-                <span class="service-price">35,000 <span data-i18n="currency">UZS</span></span>
-                <div class="service-duration" data-i18n="service6_duration">20 minutes</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         GALLERY SECTION
-    ======================================== -->
-    <section id="gallery" class="page-section">
-        <div class="section-header">
-            <h2 data-i18n="gallery_title">Our Work</h2>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 1rem auto 0;" data-i18n="gallery_subtitle">A showcase of precision cuts and meticulous grooming</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=700&fit=crop" alt="Classic pompadour hairstyle">
-                <div class="gallery-caption">Classic Pompadour</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&h=700&fit=crop" alt="Modern fade haircut">
-                <div class="gallery-caption">Skin Fade</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1593702288056-7927b442d0fa?w=600&h=700&fit=crop" alt="Beard trim and grooming">
-                <div class="gallery-caption">Beard Sculpting</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?w=600&h=700&fit=crop" alt="Textured crop haircut">
-                <div class="gallery-caption">Textured Crop</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1620208681703-836ab18c164e?w=600&h=700&fit=crop" alt="Straight razor shave">
-                <div class="gallery-caption">Hot Towel Shave</div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&h=700&fit=crop" alt="Business professional cut">
-                <div class="gallery-caption">Executive Cut</div>
-            </div>
-        </div>
-        <!-- Image Suggestions for Gallery:
-             - Before/after transformations
-             - Close-up shots of beard detailing
-             - Various fade transitions
-             - Traditional barber tools (scissors, razors, clippers)
-             - Vintage barber shop atmosphere shots
-             - Client testimonial photos
-        -->
-    </section>
-
-    <!-- ========================================
-         CONTACT SECTION
-    ======================================== -->
-    <section id="contact" class="page-section">
-        <div class="section-header">
-            <h2 data-i18n="contact_title">Book Your Appointment</h2>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 1rem auto 0;" data-i18n="contact_subtitle">Walk-ins welcome, but appointments are recommended</p>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3 style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 2rem;" data-i18n="contact_info_title">Get In Touch</h3>
-                
-                <div class="contact-item">
-                    <h3 data-i18n="contact_phone">Phone</h3>
-                    <p><a href="tel:+998901234567">+998 90 123 45 67</a></p>
-                </div>
-
-                <div class="contact-item">
-                    <h3 data-i18n="contact_email">Email</h3>
-                    <p><a href="mailto:book@ironandblade.uz">book@ironandblade.uz</a></p>
-                </div>
-
-                <div class="contact-item">
-                    <h3 data-i18n="contact_address">Address</h3>
-                    <p>428 Main Street<br>Tashkent, Uzbekistan</p>
-                </div>
-
-                <div class="contact-item">
-                    <h3 data-i18n="contact_hours">Hours</h3>
-                    <p data-i18n="hours_detail">
-                        Tuesday - Friday: 9:00 AM - 7:00 PM<br>
-                        Saturday: 8:00 AM - 6:00 PM<br>
-                        Sunday - Monday: Closed
-                    </p>
-                </div>
-
-                <div class="map-placeholder">
-                    [Google Maps Embed Here]
-                    <br>
-                    <small>Replace with: &lt;iframe src="your-google-maps-embed-url"&gt;&lt;/iframe&gt;</small>
-                </div>
-            </div>
-
-            <div class="booking-form">
-                <h3 style="color: var(--accent-gold); font-size: 1.5rem; margin-bottom: 2rem;" data-i18n="form_title">Online Booking</h3>
-                <form id="appointmentForm">
-                    <div class="form-group">
-                        <label for="name" data-i18n="form_name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone" data-i18n="form_phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email" data-i18n="form_email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service" data-i18n="form_service">Select Service *</label>
-                        <select id="service" name="service" required>
-                            <option value="">Choose a service...</option>
-                            <option value="classic-haircut">Classic Haircut - 50,000 UZS</option>
-                            <option value="modern-fade">Modern Fade - 70,000 UZS</option>
-                            <option value="hot-towel-shave">Hot Towel Shave - 40,000 UZS</option>
-                            <option value="beard-trim">Beard Trim & Shape - 30,000 UZS</option>
-                            <option value="executive-package">Executive Package - 150,000 UZS</option>
-                            <option value="hair-styling">Hair Styling - 35,000 UZS</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date" data-i18n="form_date">Preferred Date *</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="time" data-i18n="form_time">Preferred Time *</label>
-                        <input type="time" id="time" name="time" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="notes" data-i18n="form_notes">Additional Notes (Optional)</label>
-                        <textarea id="notes" name="notes" placeholder="Special requests, style preferences, etc."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button" data-i18n="form_submit">Request Appointment</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         FOOTER
-    ======================================== -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook">📘</a>
-                <a href="#" aria-label="Instagram">📷</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-            </div>
-            <p class="footer-text" data-i18n="footer_text">
-                © 2026 Iron & Blade Barber Shop. All rights reserved.<br>
-                Crafted with precision. Styled with passion.
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header fade-in">
+            <h2 class="heading-font">
+                <span data-lang="uz" class="active">Xizmatlar</span>
+                <span data-lang="ru">Услуги</span>
+                <span data-lang="en">Services</span>
+            </h2>
+            <p>
+                <span data-lang="uz" class="active">Professional sartaroshlik va barberlik xizmatlari</span>
+                <span data-lang="ru">Профессиональные парикмахерские и барбер-услуги</span>
+                <span data-lang="en">Professional hairdressing and barber services</span>
             </p>
         </div>
+
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <div class="service-icon">✂️</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">Erkaklar Soch Olish</span>
+                    <span data-lang="ru">Мужская Стрижка</span>
+                    <span data-lang="en">Men's Haircut</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Klassik va zamonaviy stillar. Mashinali va qaychi bilan professional soch olish</span>
+                    <span data-lang="ru">Классические и современные стили. Профессиональная стрижка машинкой и ножницами</span>
+                    <span data-lang="en">Classic and modern styles. Professional clipper and scissor cuts</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">80,000 - 150,000 so'm</span>
+                    <span data-lang="ru">80,000 - 150,000 сум</span>
+                    <span data-lang="en">80,000 - 150,000 UZS</span>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-icon">🧔</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">Soqol Olish</span>
+                    <span data-lang="ru">Бритье Бороды</span>
+                    <span data-lang="en">Beard Trim</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Professional soqol shakllash va oqartirish. Hot towel bilan klassik ustara</span>
+                    <span data-lang="ru">Профессиональное оформление бороды и бритье. Классическая бритва с горячим полотенцем</span>
+                    <span data-lang="en">Professional beard shaping and shaving. Classic straight razor with hot towel</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">50,000 - 100,000 so'm</span>
+                    <span data-lang="ru">50,000 - 100,000 сум</span>
+                    <span data-lang="en">50,000 - 100,000 UZS</span>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-icon">💈</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">Fade & Design</span>
+                    <span data-lang="ru">Фейд и Дизайн</span>
+                    <span data-lang="en">Fade & Design</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Low, mid, high fade. Soch ustida kreativ chiziqlar va dizaynlar</span>
+                    <span data-lang="ru">Low, mid, high fade. Креативные линии и дизайны на волосах</span>
+                    <span data-lang="en">Low, mid, high fade. Creative lines and hair designs</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">100,000 - 180,000 so'm</span>
+                    <span data-lang="ru">100,000 - 180,000 сум</span>
+                    <span data-lang="en">100,000 - 180,000 UZS</span>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-icon">🎨</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">Bo'yash</span>
+                    <span data-lang="ru">Окрашивание</span>
+                    <span data-lang="en">Hair Coloring</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Soqol va soch bo'yash. Oq sochni berkitish va zamonaviy ranglar</span>
+                    <span data-lang="ru">Окрашивание бороды и волос. Закрашивание седины и современные цвета</span>
+                    <span data-lang="en">Beard and hair coloring. Gray coverage and modern colors</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">70,000 - 150,000 so'm</span>
+                    <span data-lang="ru">70,000 - 150,000 сум</span>
+                    <span data-lang="en">70,000 - 150,000 UZS</span>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-icon">🔥</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">Hot Towel Shave</span>
+                    <span data-lang="ru">Бритье с Полотенцем</span>
+                    <span data-lang="en">Hot Towel Shave</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Klassik issiq sochiq bilan soqol olish. Terini parvarishlash va massaj</span>
+                    <span data-lang="ru">Классическое бритье с горячим полотенцем. Уход за кожей и массаж</span>
+                    <span data-lang="en">Classic hot towel shave. Skin care and facial massage</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">120,000 - 180,000 so'm</span>
+                    <span data-lang="ru">120,000 - 180,000 сум</span>
+                    <span data-lang="en">120,000 - 180,000 UZS</span>
+                </div>
+            </div>
+
+            <div class="service-card fade-in">
+                <div class="service-icon">👔</div>
+                <h3 class="oswald">
+                    <span data-lang="uz" class="active">VIP Paket</span>
+                    <span data-lang="ru">VIP Пакет</span>
+                    <span data-lang="en">VIP Package</span>
+                </h3>
+                <p>
+                    <span data-lang="uz" class="active">Soch olish + soqol olish + massaj + styling. To'liq professional parvarish</span>
+                    <span data-lang="ru">Стрижка + борода + массаж + укладка. Полный профессиональный уход</span>
+                    <span data-lang="en">Haircut + beard + massage + styling. Complete professional grooming</span>
+                </p>
+                <div class="price">
+                    <span data-lang="uz" class="active">200,000 - 300,000 so'm</span>
+                    <span data-lang="ru">200,000 - 300,000 сум</span>
+                    <span data-lang="en">200,000 - 300,000 UZS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="section-header fade-in">
+            <h2 class="heading-font">
+                <span data-lang="uz" class="active">Bizning Ishlar</span>
+                <span data-lang="ru">Наши Работы</span>
+                <span data-lang="en">Our Work</span>
+            </h2>
+            <p>
+                <span data-lang="uz" class="active">Professional ishlar va mijozlarimizning transformatsiyasi</span>
+                <span data-lang="ru">Профессиональные работы и трансформация наших клиентов</span>
+                <span data-lang="en">Professional work and client transformations</span>
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">KLASSIK FADE</span>
+                    <span data-lang="ru">КЛАССИЧЕСКИЙ ФЕЙД</span>
+                    <span data-lang="en">CLASSIC FADE</span>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">SOQOL DIZAYNI</span>
+                    <span data-lang="ru">ДИЗАЙН БОРОДЫ</span>
+                    <span data-lang="en">BEARD DESIGN</span>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">ZAMONAVIY STIL</span>
+                    <span data-lang="ru">СОВРЕМЕННЫЙ СТИЛЬ</span>
+                    <span data-lang="en">MODERN STYLE</span>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">BUSINESS LOOK</span>
+                    <span data-lang="ru">ДЕЛОВОЙ СТИЛЬ</span>
+                    <span data-lang="en">BUSINESS LOOK</span>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">KREATIV DIZAYN</span>
+                    <span data-lang="ru">КРЕАТИВНЫЙ ДИЗАЙН</span>
+                    <span data-lang="en">CREATIVE DESIGN</span>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <div class="gallery-label">
+                    <span data-lang="uz" class="active">KLASSIK USTARA</span>
+                    <span data-lang="ru">КЛАССИЧЕСКАЯ БРИТВА</span>
+                    <span data-lang="en">CLASSIC RAZOR</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header fade-in">
+            <h2 class="heading-font">
+                <span data-lang="uz" class="active">Bog'lanish</span>
+                <span data-lang="ru">Контакты</span>
+                <span data-lang="en">Contact</span>
+            </h2>
+            <p>
+                <span data-lang="uz" class="active">Uchrashuvni belgilang yoki savollaringizni bering</span>
+                <span data-lang="ru">Запишитесь на прием или задайте вопросы</span>
+                <span data-lang="en">Book an appointment or ask questions</span>
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info fade-in">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4 class="oswald">
+                            <span data-lang="uz" class="active">Telefon</span>
+                            <span data-lang="ru">Телефон</span>
+                            <span data-lang="en">Phone</span>
+                        </h4>
+                        <p><a href="tel:+998901234567">+998 90 123 45 67</a></p>
+                        <p><a href="tel:+998711234567">+998 71 123 45 67</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4 class="oswald">
+                            <span data-lang="uz" class="active">Manzil</span>
+                            <span data-lang="ru">Адрес</span>
+                            <span data-lang="en">Address</span>
+                        </h4>
+                        <p>
+                            <span data-lang="uz" class="active">Toshkent, Yunusobod tumani<br>Amir Temur ko'chasi 108</span>
+                            <span data-lang="ru">Ташкент, Юнусабадский район<br>улица Амира Темура 108</span>
+                            <span data-lang="en">Tashkent, Yunusabad district<br>Amir Temur street 108</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div class="contact-details">
+                        <h4 class="oswald">
+                            <span data-lang="uz" class="active">Ish Vaqti</span>
+                            <span data-lang="ru">Режим Работы</span>
+                            <span data-lang="en">Working Hours</span>
+                        </h4>
+                        <p>
+                            <span data-lang="uz" class="active">Dushanba - Yakshanba: 9:00 - 21:00</span>
+                            <span data-lang="ru">Понедельник - Воскресенье: 9:00 - 21:00</span>
+                            <span data-lang="en">Monday - Sunday: 9:00 AM - 9:00 PM</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="social-buttons">
+                    <a href="https://t.me/barbershop_uz" target="_blank" class="social-btn oswald">
+                        <span style="font-size: 1.5rem;">✈️</span>
+                        <span>
+                            <span data-lang="uz" class="active">Telegram</span>
+                            <span data-lang="ru">Telegram</span>
+                            <span data-lang="en">Telegram</span>
+                        </span>
+                    </a>
+                    <a href="https://instagram.com/barbershop_uz" target="_blank" class="social-btn oswald">
+                        <span style="font-size: 1.5rem;">📸</span>
+                        <span>
+                            <span data-lang="uz" class="active">Instagram</span>
+                            <span data-lang="ru">Instagram</span>
+                            <span data-lang="en">Instagram</span>
+                        </span>
+                    </a>
+                    <a href="https://wa.me/998901234567" target="_blank" class="social-btn oswald">
+                        <span style="font-size: 1.5rem;">💬</span>
+                        <span>
+                            <span data-lang="uz" class="active">WhatsApp</span>
+                            <span data-lang="ru">WhatsApp</span>
+                            <span data-lang="en">WhatsApp</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <p style="font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">
+                        <span data-lang="uz" class="active">Toshkent, Yunusobod<br>Amir Temur ko'chasi 108</span>
+                        <span data-lang="ru">Ташкент, Юнусабад<br>ул. Амира Темура 108</span>
+                        <span data-lang="en">Tashkent, Yunusabad<br>Amir Temur st. 108</span>
+                    </p>
+                    <p style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.6;">
+                        <span data-lang="uz" class="active">(Google Maps ni shu joyga qo'shishingiz mumkin)</span>
+                        <span data-lang="ru">(Здесь можно добавить Google Maps)</span>
+                        <span data-lang="en">(Add Google Maps here)</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="heading-font" style="font-size: 2rem; margin-bottom: 1rem; letter-spacing: 3px;">BARBER<span style="color: var(--accent);">SHOP</span></p>
+        <p>
+            <span data-lang="uz" class="active">© 2024 BarberShop Tashkent. Barcha huquqlar himoyalangan.</span>
+            <span data-lang="ru">© 2024 BarberShop Tashkent. Все права защищены.</span>
+            <span data-lang="en">© 2024 BarberShop Tashkent. All rights reserved.</span>
+        </p>
     </footer>
 
-    <!-- ========================================
-         JAVASCRIPT
-    ======================================== -->
     <script>
-        // ========================================
-        // TRANSLATION SYSTEM
-        // ========================================
-        const translations = {
-            en: {
-                // Navigation
-                nav_home: "Home",
-                nav_about: "About",
-                nav_services: "Services",
-                nav_gallery: "Gallery",
-                nav_contact: "Contact",
-                
-                // Hero Section
-                hero_tagline: "Timeless Craft • Modern Edge",
-                hero_title: "Barber Shop",
-                hero_subtitle: "Where tradition meets precision in men's grooming",
-                cta_book: "Book Your Appointment",
-                
-                // About Section
-                about_title: "Meet Your Barber",
-                about_p1: "With over 15 years of experience in the craft of barbering, I've dedicated my career to perfecting the art of men's grooming. What started as an apprenticeship in a traditional New York barbershop has evolved into a passion for blending classic techniques with contemporary styles.",
-                about_p2: "At Iron & Blade, I believe every man deserves to look and feel his absolute best. Whether you're looking for a classic cut, a modern fade, or a meticulous beard sculpting, I bring precision, attention to detail, and a commitment to excellence to every chair.",
-                about_p3: "I've trained under master barbers across the country, earned certifications in advanced cutting techniques, and continuously stay updated with the latest trends while honoring timeless barbering traditions.",
-                cred1: "15+ Years Experience",
-                cred2: "Master Barber Certified",
-                cred3: "Straight Razor Specialist",
-                cred4: "Award-Winning Stylist",
-                
-                // Services Section
-                services_title: "Services & Pricing",
-                services_subtitle: "Premium grooming services tailored to the modern gentleman",
-                service1_title: "Classic Haircut",
-                service1_desc: "Traditional scissor cut with attention to detail. Includes consultation, wash, cut, and styling.",
-                service1_duration: "45 minutes",
-                service2_title: "Modern Fade",
-                service2_desc: "Contemporary fade styles from low to high. Precision clipper work with seamless blending.",
-                service2_duration: "60 minutes",
-                service3_title: "Hot Towel Shave",
-                service3_desc: "Luxurious straight razor shave with hot towels, pre-shave oils, and aftershave treatment.",
-                service3_duration: "30 minutes",
-                service4_title: "Beard Trim & Shape",
-                service4_desc: "Professional beard grooming, shaping, and conditioning to maintain the perfect beard style.",
-                service4_duration: "30 minutes",
-                service5_title: "Executive Package",
-                service5_desc: "Complete grooming experience: haircut, hot towel shave, beard trim, and facial treatment.",
-                service5_duration: "90 minutes",
-                service6_title: "Hair Styling",
-                service6_desc: "Special occasion styling, pompadours, slick backs, and textured styles with premium products.",
-                service6_duration: "20 minutes",
-                currency: "UZS",
-                
-                // Gallery Section
-                gallery_title: "Our Work",
-                gallery_subtitle: "A showcase of precision cuts and meticulous grooming",
-                
-                // Contact Section
-                contact_title: "Book Your Appointment",
-                contact_subtitle: "Walk-ins welcome, but appointments are recommended",
-                contact_info_title: "Get In Touch",
-                contact_phone: "Phone",
-                contact_email: "Email",
-                contact_address: "Address",
-                contact_hours: "Hours",
-                hours_detail: "Tuesday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 8:00 AM - 6:00 PM<br>Sunday - Monday: Closed",
-                
-                // Booking Form
-                form_title: "Online Booking",
-                form_name: "Full Name",
-                form_phone: "Phone Number",
-                form_email: "Email Address",
-                form_service: "Select Service",
-                form_service_placeholder: "Choose a service...",
-                form_date: "Preferred Date",
-                form_time: "Preferred Time",
-                form_notes: "Additional Notes (Optional)",
-                form_notes_placeholder: "Special requests, style preferences, etc.",
-                form_submit: "Request Appointment",
-                
-                // Footer
-                footer_text: "© 2026 Iron & Blade Barber Shop. All rights reserved.<br>Crafted with precision. Styled with passion."
-            },
-            
-            uz: {
-                // Navigation
-                nav_home: "Bosh sahifa",
-                nav_about: "Biz haqimizda",
-                nav_services: "Xizmatlar",
-                nav_gallery: "Galeriya",
-                nav_contact: "Aloqa",
-                
-                // Hero Section
-                hero_tagline: "An'anaviy Hunarmandchilik • Zamonaviy Uslub",
-                hero_title: "Sartaroshxona",
-                hero_subtitle: "An'ana va aniqlik erkaklar parvarishida uyg'unlashadi",
-                cta_book: "Uchrashuv Belgilang",
-                
-                // About Section
-                about_title: "Sartaroshingiz Bilan Tanishing",
-                about_p1: "15 yildan ortiq sartaroshlik tajribasi bilan men erkaklar parvarishi san'atini takomillashtirishga o'z martabamdagi kuchimni bag'ishladim. An'anaviy Nyu-York sartaroshxonasida shogirdlikdan boshlangan yo'lim klassik usullarni zamonaviy uslublar bilan uyg'unlashtirish ishtiyoqiga aylandi.",
-                about_p2: "Iron & Blade'da har bir erkak o'zini eng yaxshi his qilishiga ishonaman. Klassik soch turmagi, zamonaviy fade yoki soqol shakllantirishni qidiryapsizmi, har bir mijozga aniqlik, tafsilotlarga e'tibor va mukammallikka sodiqlik bilan xizmat qilaman.",
-                about_p3: "Men mamlakat bo'ylab usta sartaroshlar qo'lida o'qilganman, ilg'or kesish texnikasi bo'yicha sertifikatlarga ega bo'lganman va an'anaviy sartaroshlik san'atiga hurmat ko'rsatgan holda so'nggi tendentsiyalardan xabardor bo'lishda davom etaman.",
-                cred1: "15+ Yillik Tajriba",
-                cred2: "Usta Sartarosh Sertifikati",
-                cred3: "Ustara Mutaxassisi",
-                cred4: "Mukofotli Stilist",
-                
-                // Services Section
-                services_title: "Xizmatlar va Narxlar",
-                services_subtitle: "Zamonaviy jentlmen uchun premium parvarish xizmatlari",
-                service1_title: "Klassik Soch Olish",
-                service1_desc: "Tafsilotlarga e'tibor bilan an'anaviy qaychi bilan kesish. Maslahat, yuvish, kesish va uslublashni o'z ichiga oladi.",
-                service1_duration: "45 daqiqa",
-                service2_title: "Zamonaviy Fade",
-                service2_desc: "Pastdan yuqoriga zamonaviy fade uslublari. Aniq mashinka ishi va mukammal aralashtirish.",
-                service2_duration: "60 daqiqa",
-                service3_title: "Issiq Sochiq Bilan Soqol Olish",
-                service3_desc: "Issiq sochiqlar, soqol olishdan oldingi moylar va keyingi davolanish bilan hashamatli ustara bilan soqol olish.",
-                service3_duration: "30 daqiqa",
-                service4_title: "Soqol Kesish va Shakllantirish",
-                service4_desc: "Mukammal soqol uslubini saqlash uchun professional soqol parvarishi, shakllantirish va parvarish.",
-                service4_duration: "30 daqiqa",
-                service5_title: "Ijroiya Paketi",
-                service5_desc: "To'liq parvarish tajribasi: soch olish, issiq sochiq bilan soqol olish, soqol kesish va yuz muolajasi.",
-                service5_duration: "90 daqiqa",
-                service6_title: "Soch Uslublash",
-                service6_desc: "Maxsus voqealar uchun uslublash, pompadour, silliq orqa va premium mahsulotlar bilan teksturali uslublar.",
-                service6_duration: "20 daqiqa",
-                currency: "so'm",
-                
-                // Gallery Section
-                gallery_title: "Bizning Ishlarimiz",
-                gallery_subtitle: "Aniq kesish va puxta parvarishning namoyishi",
-                
-                // Contact Section
-                contact_title: "Uchrashuv Belgilang",
-                contact_subtitle: "Oldindan kelganlar xush kelibsiz, lekin uchrashuv tavsiya etiladi",
-                contact_info_title: "Bog'laning",
-                contact_phone: "Telefon",
-                contact_email: "Email",
-                contact_address: "Manzil",
-                contact_hours: "Ish vaqti",
-                hours_detail: "Seshanba - Juma: 9:00 - 19:00<br>Shanba: 8:00 - 18:00<br>Yakshanba - Dushanba: Yopiq",
-                
-                // Booking Form
-                form_title: "Onlayn Band Qilish",
-                form_name: "To'liq Ism",
-                form_phone: "Telefon Raqam",
-                form_email: "Email Manzil",
-                form_service: "Xizmat Tanlang",
-                form_service_placeholder: "Xizmatni tanlang...",
-                form_date: "Kerakli Sana",
-                form_time: "Kerakli Vaqt",
-                form_notes: "Qo'shimcha Izohlar (Ixtiyoriy)",
-                form_notes_placeholder: "Maxsus so'rovlar, uslub afzalliklari va boshqalar...",
-                form_submit: "Uchrashuv So'rash",
-                
-                // Footer
-                footer_text: "© 2026 Iron & Blade Sartaroshxona. Barcha huquqlar himoyalangan.<br>Aniqlik bilan yaratilgan. Ishtiyoq bilan uslublangan."
-            },
-            
-            ru: {
-                // Navigation
-                nav_home: "Главная",
-                nav_about: "О нас",
-                nav_services: "Услуги",
-                nav_gallery: "Галерея",
-                nav_contact: "Контакты",
-                
-                // Hero Section
-                hero_tagline: "Традиционное Мастерство • Современный Стиль",
-                hero_title: "Барбершоп",
-                hero_subtitle: "Где традиция встречается с точностью в мужском уходе",
-                cta_book: "Записаться на Прием",
-                
-                // About Section
-                about_title: "Познакомьтесь с Вашим Барбером",
-                about_p1: "Имея более 15 лет опыта в искусстве барберинга, я посвятил свою карьеру совершенствованию мужского ухода. То, что начиналось как ученичество в традиционном нью-йоркском барбершопе, превратилось в страсть к сочетанию классических техник с современными стилями.",
-                about_p2: "В Iron & Blade я верю, что каждый мужчина заслуживает выглядеть и чувствовать себя на высоте. Ищете ли вы классическую стрижку, современный фейд или тщательное оформление бороды, я привношу точность, внимание к деталям и стремление к совершенству в каждое кресло.",
-                about_p3: "Я обучался у мастеров-барберов по всей стране, получил сертификаты по продвинутым техникам стрижки и постоянно слежу за последними тенденциями, сохраняя при этом традиции классического барберинга.",
-                cred1: "Опыт 15+ Лет",
-                cred2: "Сертифицированный Мастер",
-                cred3: "Специалист по Опасной Бритве",
-                cred4: "Награжденный Стилист",
-                
-                // Services Section
-                services_title: "Услуги и Цены",
-                services_subtitle: "Премиум услуги для современного джентльмена",
-                service1_title: "Классическая Стрижка",
-                service1_desc: "Традиционная стрижка ножницами с вниманием к деталям. Включает консультацию, мытье, стрижку и укладку.",
-                service1_duration: "45 минут",
-                service2_title: "Современный Фейд",
-                service2_desc: "Современные стили фейда от низкого до высокого. Точная работа машинкой с плавным переходом.",
-                service2_duration: "60 минут",
-                service3_title: "Бритье Горячим Полотенцем",
-                service3_desc: "Роскошное бритье опасной бритвой с горячими полотенцами, маслами и уходом после бритья.",
-                service3_duration: "30 минут",
-                service4_title: "Стрижка и Оформление Бороды",
-                service4_desc: "Профессиональный уход за бородой, оформление и кондиционирование для поддержания идеального стиля.",
-                service4_duration: "30 минут",
-                service5_title: "Исполнительный Пакет",
-                service5_desc: "Полный комплекс ухода: стрижка, бритье горячим полотенцем, оформление бороды и уход за лицом.",
-                service5_duration: "90 минут",
-                service6_title: "Укладка Волос",
-                service6_desc: "Укладка для особых случаев, помпадур, зализанный назад и текстурные стили с премиум продуктами.",
-                service6_duration: "20 минут",
-                currency: "сум",
-                
-                // Gallery Section
-                gallery_title: "Наши Работы",
-                gallery_subtitle: "Демонстрация точных стрижек и тщательного ухода",
-                
-                // Contact Section
-                contact_title: "Записаться на Прием",
-                contact_subtitle: "Принимаем без записи, но запись рекомендуется",
-                contact_info_title: "Свяжитесь с Нами",
-                contact_phone: "Телефон",
-                contact_email: "Email",
-                contact_address: "Адрес",
-                contact_hours: "Часы Работы",
-                hours_detail: "Вторник - Пятница: 9:00 - 19:00<br>Суббота: 8:00 - 18:00<br>Воскресенье - Понедельник: Закрыто",
-                
-                // Booking Form
-                form_title: "Онлайн Запись",
-                form_name: "Полное Имя",
-                form_phone: "Номер Телефона",
-                form_email: "Email Адрес",
-                form_service: "Выберите Услугу",
-                form_service_placeholder: "Выберите услугу...",
-                form_date: "Предпочтительная Дата",
-                form_time: "Предпочтительное Время",
-                form_notes: "Дополнительные Заметки (Необязательно)",
-                form_notes_placeholder: "Особые пожелания, предпочтения по стилю и т.д.",
-                form_submit: "Запросить Запись",
-                
-                // Footer
-                footer_text: "© 2026 Iron & Blade Барбершоп. Все права защищены.<br>Создано с точностью. Оформлено со страстью."
-            }
-        };
+        // Language Switcher
+        const langButtons = document.querySelectorAll('.lang-btn');
+        let currentLang = 'uz';
 
-        // Current language
-        let currentLang = localStorage.getItem('preferredLanguage') || 'en';
-
-        // Function to change language
-        function changeLanguage(lang) {
+        function switchLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem('preferredLanguage', lang);
             
-            // Update all elements with data-i18n attribute
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.innerHTML = translations[lang][key];
-                }
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
             });
             
-            // Update active language button
-            document.querySelectorAll('.lang-btn').forEach(btn => {
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            langButtons.forEach(btn => {
                 btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
+                if (btn.dataset.langSwitch === lang) {
                     btn.classList.add('active');
                 }
             });
             
-            // Update form placeholders
-            updateFormPlaceholders(lang);
+            document.documentElement.lang = lang;
+            localStorage.setItem('preferredLang', lang);
         }
 
-        // Function to update form placeholders
-        function updateFormPlaceholders(lang) {
-            const t = translations[lang];
-            document.getElementById('notes').placeholder = t.form_notes_placeholder;
-            document.querySelector('#service option[value=""]').textContent = t.form_service_placeholder;
-            
-            // Update service options
-            const services = [
-                { value: 'classic-haircut', key: 'service1_title', price: '50,000' },
-                { value: 'modern-fade', key: 'service2_title', price: '70,000' },
-                { value: 'hot-towel-shave', key: 'service3_title', price: '40,000' },
-                { value: 'beard-trim', key: 'service4_title', price: '30,000' },
-                { value: 'executive-package', key: 'service5_title', price: '150,000' },
-                { value: 'hair-styling', key: 'service6_title', price: '35,000' }
-            ];
-            
-            services.forEach((service, index) => {
-                const option = document.querySelector(`#service option[value="${service.value}"]`);
-                if (option) {
-                    option.textContent = `${t[service.key]} - ${service.price} ${t.currency}`;
-                }
-            });
-        }
-
-        // Language button event listeners
-        document.querySelectorAll('.lang-btn').forEach(btn => {
+        langButtons.forEach(btn => {
             btn.addEventListener('click', () => {
-                const lang = btn.getAttribute('data-lang');
-                changeLanguage(lang);
+                switchLanguage(btn.dataset.langSwitch);
             });
         });
 
-        // Initialize language on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            changeLanguage(currentLang);
-        });
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang) {
+            switchLanguage(savedLang);
+        }
 
-        // ========================================
-        // EXISTING JAVASCRIPT
-        // ========================================
         // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
 
-        menuToggle.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            mobileMenuBtn.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                menuToggle.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
             });
         });
 
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Active navigation link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinksAll = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinksAll.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Form submission handler
-        const appointmentForm = document.getElementById('appointmentForm');
-        appointmentForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                service: document.getElementById('service').value,
-                date: document.getElementById('date').value,
-                time: document.getElementById('time').value,
-                notes: document.getElementById('notes').value
-            };
-
-            // Here you would typically send this data to a server
-            console.log('Appointment Request:', formData);
-            
-            // Show success message
-            alert('Thank you for your appointment request! We will contact you shortly to confirm your booking.');
-            
-            // Reset form
-            appointmentForm.reset();
-        });
-
-        // Set minimum date to today for date input
-        const dateInput = document.getElementById('date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-
-        // Smooth scroll for navigation links
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                header.style.boxShadow = 'var(--shadow-hard)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-medium)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
